@@ -53,3 +53,24 @@ resource "aws_key_pair" "k8s" {
   key_name   = "week5"
   public_key = file("${path.module}/week5.pub")
 }
+
+# Repositry for Web App
+resource "aws_ecr_repository" "webapp" {
+  name                 = "webapp"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+}
+
+# Repositry for my SQl
+
+resource "aws_ecr_repository" "db_mysql" {
+  name                 = "db_mysql"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+}
