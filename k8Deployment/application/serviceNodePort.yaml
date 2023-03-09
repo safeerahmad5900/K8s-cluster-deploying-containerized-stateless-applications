@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: application
   labels:
-    app: webapp
+    app: employees
     component: frontend
 spec:
   type: NodePort
@@ -12,4 +12,4 @@ spec:
       targetPort: 8080
       nodePort: 30000
   selector:
-    app: webapp
+    app: employees
