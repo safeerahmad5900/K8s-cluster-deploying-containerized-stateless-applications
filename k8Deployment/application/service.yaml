@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: application
   labels:
-    app.kubernetes.io/name: webapp
+    app.kubernetes.io/name: employees
     app.kubernetes.io/component: frontend
 spec:
   ports:
   - port: 8080
   selector:
-    app.kubernetes.io/name: webapp
+    app.kubernetes.io/name: employees
     app.kubernetes.io/component: frontend

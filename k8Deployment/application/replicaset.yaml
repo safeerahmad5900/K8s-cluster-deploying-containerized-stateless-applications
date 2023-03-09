@@ -3,25 +3,25 @@ kind: ReplicaSet
 metadata:
   name: application
   labels:
-    app: webapp
+    app: employees
     component: frontend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: webapp
+      app: employees
   template:
     metadata:
       labels:
-        app: webapp
+        app: employees
         component: frontend
     spec:
       containers:
-        - name: websrv-images
+        - name: employees-images
           image: 634809228531.dkr.ecr.us-east-1.amazonaws.com/webapp:v0.1
           env:
             - name: DBPWD
-              value: password
+              value: Temp/123
             - name: DBUSER
               value: root
             - name: DBHOST
@@ -30,5 +30,5 @@ spec:
               value: "3306"
           ports:
             - containerPort: 8080
-      imagePullSecrets:
-        - name: credsafeer007
+  #    imagePullSecrets:
+  #      - name: credsafeer007

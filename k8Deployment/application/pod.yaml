@@ -11,7 +11,7 @@ spec:
       image: 634809228531.dkr.ecr.us-east-1.amazonaws.com/webapp:v0.1
       env:
         - name: DBPWD
-          value: password
+          value: Temp/123
         - name: DBUSER
           value: root
         - name: DBHOST
@@ -20,5 +20,5 @@ spec:
           value: "3306"
       ports:
         - containerPort: 8080
-  imagePullSecrets:
-    - name: credsafeer007
+ # imagePullSecrets:
+#    - name: credsafeer007
