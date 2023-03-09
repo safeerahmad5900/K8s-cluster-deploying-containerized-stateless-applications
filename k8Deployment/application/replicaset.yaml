@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: application
+  labels:
+    app: webapp
+    component: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+        component: frontend
+    spec:
+      containers:
+        - name: websrv-images
+          image: 634809228531.dkr.ecr.us-east-1.amazonaws.com/webapp:v0.1
+          env:
+            - name: DBPWD
+              value: password
+            - name: DBUSER
+              value: root
+            - name: DBHOST
+              value: "mysql.database.svc.cluster.local"
+            - name: DBPORT
+              value: "3306"
+          ports:
+            - containerPort: 8080
+      imagePullSecrets:
+        - name: credsafeer007
