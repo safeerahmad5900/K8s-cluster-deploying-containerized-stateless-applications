@@ -9,7 +9,8 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: employees
+      app.kubernetes.io/name: employees
+      app.kubernetes.io/component: frontend
   template:
     metadata:
       labels:
