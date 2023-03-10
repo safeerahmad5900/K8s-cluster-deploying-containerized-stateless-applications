@@ -20,10 +20,9 @@ spec:
       containers:
       - name: employees-images
         image: 634809228531.dkr.ecr.us-east-1.amazonaws.com/webapp:v0.2
-        imagePullPolicy: always
         env:
         - name: APP_COLOR
-          value: "red"
+          value: "pink"
         - name: DBPWD
           value: Temp/123
         - name: DBUSER
