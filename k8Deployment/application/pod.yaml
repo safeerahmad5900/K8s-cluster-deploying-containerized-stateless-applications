@@ -3,12 +3,12 @@ kind: Pod
 metadata:
   name: application
   labels:
-    app: webapp
-    component: frontend
+    app.kubernetes.io/name: employees
+    app.kubernetes.io/component: frontend
 spec:
   containers:
     - name: websrv-images
-      image: 634809228531.dkr.ecr.us-east-1.amazonaws.com/webapp:v0.1
+      image: 634809228531.dkr.ecr.us-east-1.amazonaws.com/webapp:v0.3
       env:
         - name: DBPWD
           value: Temp/123
