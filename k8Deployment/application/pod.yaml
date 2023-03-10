@@ -3,8 +3,8 @@ kind: Pod
 metadata:
   name: application
   labels:
-    app.kubernetes.io/name: employees
-    app.kubernetes.io/component: frontend
+    app: employees
+    component: frontend
 spec:
   containers:
     - name: websrv-images

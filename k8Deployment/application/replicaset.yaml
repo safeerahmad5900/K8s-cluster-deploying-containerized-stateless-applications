@@ -3,19 +3,19 @@ kind: ReplicaSet
 metadata:
   name: application
   labels:
-    app.kubernetes.io/name: employees
-    app.kubernetes.io/component: frontend
+    app: employees
+    component: frontend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app.kubernetes.io/name: employees
-      app.kubernetes.io/component: frontend
+      app: employees
+      component: frontend
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: employees
-        app.kubernetes.io/component: frontend
+        app: employees
+        component: frontend
     spec:
       containers:
         - name: employees-images
