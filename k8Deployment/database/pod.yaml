@@ -13,5 +13,3 @@ spec:
     env:
     - name: MYSQL_ROOT_PASSWORD
       value: Temp/123
-#  imagePullSecrets:
-#    - name: credsafeer007
